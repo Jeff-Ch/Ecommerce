@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151217204744) do
+ActiveRecord::Schema.define(version: 20151222225749) do
 
   create_table "addresses", force: true do |t|
     t.string   "Line 1 of Address"
@@ -27,11 +27,19 @@ ActiveRecord::Schema.define(version: 20151217204744) do
 
   add_index "addresses", ["addressable_id", "addressable_type"], name: "index_addresses_on_addressable_id_and_addressable_type"
 
+  create_table "usernames", force: true do |t|
+    t.string   "username"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "usernames", ["user_id"], name: "index_usernames_on_user_id"
+
   create_table "users", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
     t.string   "email"
-    t.string   "username"
     t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"

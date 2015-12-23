@@ -28,13 +28,18 @@ Rails.application.routes.draw do
 
   post 'sessions/login' => 'sessions#login'
 
-  get 'sessions/new' => 'sessions#new'
+  get 'users/new' => 'users#new'
 
-  post '/sessions/create_username' => 'sessions#create_username'
+  post '/users/create_username' => 'users#create_username'
+
+  get 'home' => 'dashboard#index'
+  get 'products' => 'products#index'
+  get 'cart' => 'cart#index'
 
   resources :users
   resources :sessions
   resources :products
+  resources :dashboard
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

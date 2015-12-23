@@ -6,7 +6,11 @@ class SessionsController < ApplicationController
      @user = User.where(:email => params[:user][:email]).first
       if @user.authenticate(params[:user][:password])
         session[:user_id] = @user.id
-      redirect_to "/events"
+        if Username.where(:user_id => session[:user_id]).first
+          redirect_to "/dashboard"
+        else
+          redirect_to "/users/new"
+        end
     else
       flash[:errors] = []
       flash[:errors].push("Invalid Login, Try Again")
@@ -17,9 +21,5 @@ class SessionsController < ApplicationController
   def logout
     session.clear
     redirect_to "/"
-  end
-
-  def create_username
-    
   end
 end

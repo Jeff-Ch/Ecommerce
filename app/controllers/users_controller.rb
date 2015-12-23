@@ -5,9 +5,6 @@ class UsersController < ApplicationController
   def show
   end
 
-  def new
-  end
-
   def edit
   end
 
@@ -16,7 +13,7 @@ class UsersController < ApplicationController
     if @user.valid?
       @user.save
       session[:user_id] = User.last.id
-      redirect_to '/sessions/new'
+      redirect_to '/users/new'
     else
       flash[:errors] = @user.errors.full_messages
       redirect_to "/"
@@ -28,6 +25,16 @@ class UsersController < ApplicationController
   end
 
   def destroy
+  end
+
+  def create_username
+    if Username.where(:username => params[:username]).first
+      flash[:errors] = ["Username already exists!"]
+      redirect_to "/users/new"
+    else
+      Username.create(:username => params[:username], :user_id => session[:user_id])
+      redirect_to '/dashboard/'
+    end
   end
 
   private
