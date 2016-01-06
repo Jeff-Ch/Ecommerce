@@ -6,12 +6,15 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+ 
+  <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
   <style>
   *{
     border: 0;
     margin: 0;
+    font-family: 'Raleway', sans-serif;
   }
   #error_msg{
     display: inline-block;
@@ -21,9 +24,17 @@
     margin-top: 40px;
     margin-bottom: 40px;
   }
+  .img{
+    padding: 20px 10px 20px 10px;
+  }
+  .links{
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
   </style>
 </head>
 <body>
+  <% if session[:logged_in] %>
   <nav>
     <div class="nav-wrapper">
       <a href="#" class="brand-logo right">Logo</a>
@@ -34,6 +45,7 @@
       </ul>
     </div>
   </nav>
+  <% end %>
   <div id='error_container'>
     <% if flash[:errors] %>
     <% flash[:errors].each do |e| %>

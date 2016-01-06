@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151222225749) do
+ActiveRecord::Schema.define(version: 20151225200551) do
 
   create_table "addresses", force: true do |t|
     t.string   "Line 1 of Address"
@@ -26,6 +26,15 @@ ActiveRecord::Schema.define(version: 20151222225749) do
   end
 
   add_index "addresses", ["addressable_id", "addressable_type"], name: "index_addresses_on_addressable_id_and_addressable_type"
+
+  create_table "products", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "url"
+    t.decimal  "price",       precision: 5, scale: 2
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "usernames", force: true do |t|
     t.string   "username"

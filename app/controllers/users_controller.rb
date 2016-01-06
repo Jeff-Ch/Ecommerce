@@ -33,6 +33,7 @@ class UsersController < ApplicationController
       redirect_to "/users/new"
     else
       Username.create(:username => params[:username], :user_id => session[:user_id])
+      session[:logged_in] = true
       redirect_to '/dashboard/'
     end
   end
