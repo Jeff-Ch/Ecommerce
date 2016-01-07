@@ -1,3 +1,7 @@
+<h6>Filter By Category:</h6>
+
 <% @categories.each do |category| %>
+<div class='collection-item'>
 <%= link_to category.name, fetch_products_path(:category_id => category.id), :remote => true %>
+</div>
 <% end %>

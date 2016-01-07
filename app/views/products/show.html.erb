@@ -1,20 +1,16 @@
-<!-- <img src = '<%= @product.url %>' width=200px height=200px alt = '<%= @product.name %>'>
-<h4><%= @product.name %></h4>
-<h6>Description: <%= @product.description %></h6>
-<h6>Price: <%= @product.price %></h6>
-
-<a href=''>Add to Cart</a>
--->
 <div class='row'>
-	<div class="s12 m4 l8 img">
-		<img src="<%= @product.url %>" alt = "<%= @product.name %>">
+	<div class="col s4">
+		<img src="<%= @product.url %>" width=350px height=350px alt = "<%= @product.name %>">
 	</div>
-	<div class='s12 m4 l4'>
-		<p><%= @product.name %></p>
+	<div class='col s7'>
+		<h5><%= @product.name %></h5>
+		<p id= 'description'><%= @product.description %></p>
 		<p>$ <%= @product.price %></p>
-		<p><%= @product.description %></p>
 		<div class = "links">
-			<a href=''>Add to Cart</a>
+			<button class="btn waves-effect waves-light" type="submit" name="action">Add to Cart
+				<i class="material-icons right">shopping_cart</i>
+			</button>
+			<a class="waves-effect waves-light btn" href='/products'>Back to Products</a>
 		</div>
 	</div>
 </div>
