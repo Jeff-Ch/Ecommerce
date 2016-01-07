@@ -7,4 +7,5 @@ class User < ActiveRecord::Base
   validates :password, length: {minimum: 8}
 
   has_one :username
+  has_many :products, :through => :carts
 end

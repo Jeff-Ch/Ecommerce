@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'carts/index'
+
+  get 'carts/update'
+
+  get 'carts/delete'
+
   get 'dashboard/index'
 
   get 'users/index'
@@ -31,10 +37,11 @@ Rails.application.routes.draw do
   get 'users/new' => 'users#new'
 
   post '/users/create_username' => 'users#create_username'
+  post '/carts/update' => 'carts#update'
 
   get 'home' => 'dashboard#index'
   get 'products' => 'products#index'
-  get 'cart' => 'cart#index'
+  get 'cart' => 'carts#index'
   # get 'product/:id' => 'products#show'
   resources :users
   resources :sessions
