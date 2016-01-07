@@ -1,23 +1,16 @@
 <h4>Browse our selections</h4>
+
+
 <div class = 'row'>
-	<% @products.each do |product| %>
-
-	<div class="col s12 m4 l2">
-		<div class="card center">
-			<div class = 'img'>
-				<img src="<%= product.url %>" height=60% width=60% alt = "<%= product.name %>">
-			</div>
-			<p><%= product.name %></p>
-			<p>$ <%= product.price %></p>
-			<div class = "links">
-				<a class='btn small-btn' href='/products/<%= product.id %>/'>More Info</a><br>
-				<a href=''>Add to Cart</a>
-			</div>
-		</div>
+	<div class = 'col s12 m6 l3'>
+		<%= render 'sidebar' %>
 	</div>
-
-	<% end %>
+	<div class ='col s12 m6 l9'>
+		<%= render partial: 'products_grid', locals: { products: @products} %>
+	</div>
 </div>
+
+
 
 
 

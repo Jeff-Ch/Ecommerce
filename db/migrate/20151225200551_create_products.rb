@@ -5,6 +5,7 @@ class CreateProducts < ActiveRecord::Migration
       t.string :description
       t.string :url
       t.decimal :price, precision: 5, scale: 2
+      t.references :category, index: true
 
       t.timestamps
     end
