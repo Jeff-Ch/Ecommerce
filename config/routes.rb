@@ -43,13 +43,15 @@ Rails.application.routes.draw do
   get 'home' => 'dashboard#index'
   get 'products' => 'products#index'
   get 'cart' => 'carts#index'
-  # get 'product/:id' => 'products#show'
+  # get '/products/:id' => 'products#show'
+  
   resources :users
   resources :sessions
   resources :products
   resources :dashboard
 
   get '/fetch_products' => 'products#from_category', as: 'fetch_products'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
