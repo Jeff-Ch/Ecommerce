@@ -43,6 +43,7 @@ Rails.application.routes.draw do
   get 'home' => 'dashboard#index'
   get 'products' => 'products#index'
   get 'cart' => 'carts#index'
+  post '/carts/purchase' => 'carts#purchase'
   # get '/products/:id' => 'products#show'
   
   resources :users

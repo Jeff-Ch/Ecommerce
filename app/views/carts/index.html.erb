@@ -13,23 +13,25 @@
 		<tbody>
 			<% @products.each do |cart_item| %>
 			<tr>
-				<td><%= cart_item.product.name %></td>
-				<td>$ <%= cart_item.product.price %></td>
+				<td><a href='/products/<%= cart_item.product_id %>'><%= cart_item.product.name %></a></td>
+				<td><%= number_to_currency(cart_item.product.price) %></td>
 				<td><%= cart_item.quantity %></td>
-				<td>$ <%= cart_item.product.price * cart_item.quantity %></td>
-				<td>
+				<td><%= number_to_currency(cart_item.product.price * cart_item.quantity) %></td>
+				<td id='action'>
 					<form action = '/carts/remove' method='post'>
 						<input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
 						<input type='hidden' name='id' value='<%= cart_item.product_id %>'>
 						<div class = 'row'>
-							<div class = 'col s5'>
+							<div class = 'col s4 push-s1'>
 								<label>Remove:</label>
 								<select name = 'quantity'>
 									<% for i in 1..cart_item.quantity %>
 									<option value="<%= i %>"><%= i %></option>
 									<% end %>
 								</select>
-								<button class="btn waves-effect waves-light" type="submit" name="action">Remove
+							</div>
+							<div class = 'col s7 push-s1' id = 'update'>
+								<button class="btn waves-effect waves-light" type="submit" name="action">Update
 								</button>
 							</div>
 						</div>
@@ -41,8 +43,26 @@
 				<td></td>
 				<td></td>
 				<td></td>
-				<td>$ <%= @cart_total %></td>
-				<td></td>
+				<td><%= number_to_currency(@cart_total) %></td>
+				<td>
+					<form action = '/cart/purchase' method = 'post'>
+						<script
+						src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+						data-key="pk_test_6pRNASCoBOKtIshFeQd4XMUh"
+						data-image="http://3.imimg.com/data3/OP/YH/MY-14426176/e-commerce-250x250.png"
+						data-name="MiniStore"
+						data-description="Purchasing <%= @cart_quantity %> product(s)!"
+						data-amount="<%= @cart_total*100 %>"
+						data-billing-address=true
+						data-zip-code=true
+						data-shipping-address=true
+						data-locale="auto"
+						data-email="<%= @email %>"
+						data-label="Purchase">
+						</script>
+						<input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
+					</form>
+				</td>
 			</tbody>
 		</table>
 	</div>

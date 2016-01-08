@@ -38,11 +38,16 @@
     margin-bottom: 30px;
   }
   .dropdown-content{
-    padding-left: 25%;
+    text-indent: 25px;
   }
   .select-wrapper input.select-dropdown{
-    padding-left: 40%;
-    width: 60px;
+    text-indent: 25px;
+  }
+  #update{
+    padding-top: 30px;
+  }
+  #action{
+    width: 250px;
   }
   </style>
 </head>
@@ -50,11 +55,11 @@
   <% if session[:logged_in] %>
   <nav>
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo right">Logo</a>
+      <%= link_to '<i class="material-icons right">shopping_cart</i>'.html_safe, cart_path %>
       <ul id="nav-mobile" class="left hide-on-med-and-down">
         <li><%= link_to "Home", home_path %></li>
         <li><%= link_to "Products", products_path %></li>
-        <li><%= link_to "Cart", cart_path %></li>
+        <li></li>
       </ul>
     </div>
   </nav>

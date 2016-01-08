@@ -2,9 +2,12 @@ class CartsController < ApplicationController
 	def index
 		@products = Cart.where(:user_id => session[:user_id])
 		@cart_total = 0
+		@cart_quantity = 0
 		@products.each do |cart_item|
 			@cart_total += cart_item.quantity * cart_item.product.price
+			@cart_quantity += cart_item.quantity
 		end
+		@email = User.find(session[:user_id]).email
 	end
 
 	def update
