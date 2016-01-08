@@ -1,5 +1,54 @@
-<% @products.each do |cart_item| %>
-<p><%= cart_item.product.name %></p>
-<p><%= cart_item.quantity %></p>
-<p><%= cart_item.product.price %></p>
-<% end %>
+<div class = 'row'>
+	<table class='centered highlight col s8 push-s2'>
+		<thead>
+			<tr>
+				<th>Product</th>
+				<th>Price/Unit</th>
+				<th>Quantity</th>
+				<th>Total</th>
+				<th></th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<% @products.each do |cart_item| %>
+			<tr>
+				<td><%= cart_item.product.name %></td>
+				<td>$ <%= cart_item.product.price %></td>
+				<td><%= cart_item.quantity %></td>
+				<td>$ <%= cart_item.product.price * cart_item.quantity %></td>
+				<td>
+					<form action = '/carts/remove' method='post'>
+						<input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
+						<input type='hidden' name='id' value='<%= cart_item.product_id %>'>
+						<div class = 'row'>
+							<div class = 'col s5'>
+								<label>Remove:</label>
+								<select name = 'quantity'>
+									<% for i in 1..cart_item.quantity %>
+									<option value="<%= i %>"><%= i %></option>
+									<% end %>
+								</select>
+								<button class="btn waves-effect waves-light" type="submit" name="action">Remove
+								</button>
+							</div>
+						</div>
+					</form>
+				</td>
+			</tr>
+			<% end %>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>$ <%= @cart_total %></td>
+				<td></td>
+			</tbody>
+		</table>
+	</div>
+
+	<script>
+	$(document).ready(function() {
+		$('select').material_select();
+	});
+	</script>

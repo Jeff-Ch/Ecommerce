@@ -38,6 +38,7 @@ Rails.application.routes.draw do
 
   post '/users/create_username' => 'users#create_username'
   post '/carts/update' => 'carts#update'
+  post '/carts/remove' => 'carts#remove'
 
   get 'home' => 'dashboard#index'
   get 'products' => 'products#index'
