@@ -4,6 +4,7 @@ class CreateCarts < ActiveRecord::Migration
       t.references :user, index: true
       t.references :product, index: true
       t.integer :quantity
+      t.references :order, index:true
 
       t.timestamps
     end

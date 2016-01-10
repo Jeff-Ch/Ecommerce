@@ -11,30 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160107181809) do
-
-  create_table "addresses", force: true do |t|
-    t.string   "Line 1 of Address"
-    t.string   "Line 2 of Address"
-    t.string   "City"
-    t.string   "State"
-    t.integer  "Zip"
-    t.integer  "addressable_id"
-    t.string   "addressable_type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "addresses", ["addressable_id", "addressable_type"], name: "index_addresses_on_addressable_id_and_addressable_type"
+ActiveRecord::Schema.define(version: 20160110030116) do
 
   create_table "carts", force: true do |t|
     t.integer  "user_id"
     t.integer  "product_id"
     t.integer  "quantity"
+    t.integer  "order_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "carts", ["order_id"], name: "index_carts_on_order_id"
   add_index "carts", ["product_id"], name: "index_carts_on_product_id"
   add_index "carts", ["user_id"], name: "index_carts_on_user_id"
 
@@ -43,6 +31,22 @@ ActiveRecord::Schema.define(version: 20160107181809) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "order_statuses", force: true do |t|
+    t.string   "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "orders", force: true do |t|
+    t.integer  "shipspeed_id"
+    t.integer  "orderstatus_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "orders", ["orderstatus_id"], name: "index_orders_on_orderstatus_id"
+  add_index "orders", ["shipspeed_id"], name: "index_orders_on_shipspeed_id"
 
   create_table "products", force: true do |t|
     t.string   "name"
@@ -55,6 +59,12 @@ ActiveRecord::Schema.define(version: 20160107181809) do
   end
 
   add_index "products", ["category_id"], name: "index_products_on_category_id"
+
+  create_table "ship_speeds", force: true do |t|
+    t.string   "speed"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "usernames", force: true do |t|
     t.string   "username"

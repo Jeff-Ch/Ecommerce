@@ -5,6 +5,16 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+ShipSpeed.create(:speed => "Standard")
+ShipSpeed.create(:speed => "Expedited")
+ShipSpeed.create(:speed => "2-Day")
+ShipSpeed.create(:speed => "Next Day")
+
+OrderStatus.create(:status => "Processing")
+OrderStatus.create(:status => "Shipped")
+OrderStatus.create(:status => "Cancelled")
+
+User.create(:first_name => "Jeff", :last_name => "C", :email => "j@1.com", :password => "12345678", :password_confirmation => "12345678")
 
 Category.create(:name => "Phones")
 Category.create(:name => "Televisions")

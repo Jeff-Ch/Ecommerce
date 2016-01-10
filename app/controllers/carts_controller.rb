@@ -1,6 +1,6 @@
 class CartsController < ApplicationController
 	def index
-		@products = Cart.where(:user_id => session[:user_id])
+		@products = Cart.where(:user_id => session[:user_id]).where(:order_id => nil)
 		@cart_total = 0
 		@cart_quantity = 0
 		@products.each do |cart_item|
@@ -11,7 +11,7 @@ class CartsController < ApplicationController
 	end
 
 	def update
-		@current_product = Cart.where(:user_id => session[:user_id]).where(:product_id => params[:id])
+		@current_product = Cart.where(:user_id => session[:user_id]).where(:product_id => params[:id]).where(:order_id => nil)
 		if @current_product.exists?
 			@quantity = @current_product.first.quantity + params[:quantity].to_i
 			Cart.update(@current_product.first.id, :quantity => @quantity)

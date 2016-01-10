@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'orders/new'
+
+  get 'orders/update'
+
+  get 'orders/cancel'
+
   get 'carts/index'
 
   get 'carts/update'
@@ -44,6 +50,7 @@ Rails.application.routes.draw do
   get 'products' => 'products#index'
   get 'cart' => 'carts#index'
   post '/carts/purchase' => 'carts#purchase'
+  post '/orders/new' => 'orders#new'
   # get '/products/:id' => 'products#show'
   
   resources :users
