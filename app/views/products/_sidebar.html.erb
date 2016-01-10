@@ -1,7 +1,8 @@
-<h6>Filter By Category:</h6>
+<h6 class='product_card'><i class="material-icons">sort</i> Filter by Category</h6>
 
 <% @categories.each do |category| %>
 <div class='collection-item'>
-<%= link_to category.name, fetch_products_path(:category_id => category.id), :remote => true %>
+<%= link_to category.name, fetch_products_path(:category_id => category.id), :remote => true, :class => "waves-effect waves-light btn blue lighten-3 more_info" %>
 </div>
 <% end %>
+<a href= "/products" class="waves-effect waves-light btn black-text blue-grey lighten-4 more_info">All Products</a>

@@ -20,7 +20,11 @@ class CartsController < ApplicationController
 			Cart.create(:user_id => session[:user_id], :product_id => params[:id], :quantity => params[:quantity])
 			@product_id = Cart.last.product_id
 		end
-		redirect_to "/cart"
+		if params[:origin] == "info"
+			redirect_to "/carts/index"
+		else
+			redirect_to "/products"
+		end
 	end
 
 	def delete

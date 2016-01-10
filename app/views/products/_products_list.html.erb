@@ -6,10 +6,20 @@
 		</div>
 		<p><%= product.name %></p>
 		<p>$ <%= product.price %></p>
-		<div class = "links">
-			<a class='btn small-btn info' href='/products/<%= product.id %>/'>More Info</a><br>
-			<a href=''>Add to Cart</a>
+		<div class = "row product_card">
+			<form action = '/carts/update' method = 'post'>
+				<div class ='col m4 push-s2'>
+					<input id = 'quantity' type = 'number'  min= "1" value="1" name ='quantity'>
+				</div>
+				<div class = 'col m3 push-s2'>
+					<input type = 'hidden' name ='id' value='<%= product.id %>'>
+					<input type ='hidden' name ='origin' value='products'>
+					<input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
+					<button id = 'add' class="btn waves-effect waves-light add_to" type="submit" name="action"><i class="material-icons">add_shopping_cart</i></button>
+				</div>
+			</form>
 		</div>
+		<a class="btn small-btn waves-effect waves-light more_info" href='/products/<%= product.id %>/'>More Info</a>
 	</div>
 </div>
 <% end %>
