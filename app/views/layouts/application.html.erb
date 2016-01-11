@@ -6,11 +6,11 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
- 
+
   <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <style>
   *{
@@ -89,7 +89,8 @@
   </style>
 </head>
 <body class="grey lighten-4">
-  <% if session[:logged_in] %>
+
+  <% if session[:username] %>
   <nav>
     <div class="nav-wrapper black-text white">
       <a href="/home" class="brand-logo center black-text">Tech World</a>
@@ -102,15 +103,18 @@
     </div>
   </nav>
   <% end %>
-  <div id='error_container'>
-    <% if flash[:errors] %>
-    <% flash[:errors].each do |e| %>
-    <div id = 'error_msg' class = 'card-panel red lighten-3'>
-     <span class='white-text'><%= e %></span>
-   </div>
-   <% end %>
-   <% end %>
+
+    <div id='error_container'>
+    <% if flash[:error] %>
+      <% flash[:error].each do |e| %>
+        <div id = 'error_msg' class = 'card-panel red lighten-3'>
+          <span class='white-text'><%= e %></span>
+        </div>
+      <% end %>
+    <% end %>
  </div>
+
+
  <%= yield %>
 
 </body>

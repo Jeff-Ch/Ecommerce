@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :require_login, except: [:create]
   def index
   end
 
@@ -15,7 +16,7 @@ class UsersController < ApplicationController
       session[:user_id] = User.last.id
       redirect_to '/users/new'
     else
-      flash[:errors] = @user.errors.full_messages
+      flash[:error] = @user.errors.full_messages
       redirect_to "/"
     end
     
@@ -33,7 +34,7 @@ class UsersController < ApplicationController
       redirect_to "/users/new"
     else
       Username.create(:username => params[:username], :user_id => session[:user_id])
-      session[:logged_in] = true
+      session[:username] = true
       redirect_to '/dashboard/'
     end
   end

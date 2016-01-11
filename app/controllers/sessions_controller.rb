@@ -1,21 +1,22 @@
 class SessionsController < ApplicationController
+  before_action :require_login, except: [:index, :login]
+  
   def index
-    session.clear
+    # session.clear
   end
 
   def login
      @user = User.where(:email => params[:user][:email]).first
       if @user and @user.authenticate(params[:user][:password])
         session[:user_id] = @user.id
-        session[:logged_in] = true
         if Username.where(:user_id => session[:user_id]).first
           redirect_to "/dashboard"
         else
           redirect_to "/users/new"
         end
     else
-      flash[:errors] = []
-      flash[:errors].push("Invalid Login, Try Again")
+      flash[:error] = []
+      flash[:error].push("Invalid Login, Try Again")
       redirect_to "/"
     end
   end

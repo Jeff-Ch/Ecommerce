@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  root 'sessions#index'
+  
   get 'orders/new'
 
   get 'orders/update'
@@ -31,7 +34,6 @@ Rails.application.routes.draw do
 
   get 'products/show'
 
-  root 'sessions#index'
   get 'sessions/index'
 
   get 'sessions/login'

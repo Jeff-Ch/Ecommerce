@@ -22,36 +22,36 @@ Category.create(:name => "Cameras")
 Category.create(:name => "Headphones")
 Category.create(:name => "Laptops")
 
-Product.create(:name => "Cellphone A", :description => "Latest verison of the best selling phone on the market", :url => "http://pisces.bbystatic.com/image2/BestBuy_US/images/products/7639/7639076_sd.jpg;canvasHeight=500;canvasWidth=500", :price => '699.99', :category_id => 1)
+Product.create(:name => "Cellphone A", :description => "Latest verison of the best selling phone on the market", :url => "http://www.techbox.ca/image/data/Product%20Photos/iphone6psilver-500x500.png", :price => '699.99', :category_id => 1)
 
-Product.create(:name => "TV A", :description => "1080p with 2 HDMI connections. (AAA Batteries are needed)", :url => "http://www.bhphotovideo.com/images/images500x500/samsung_un55hu8550fxza_un55hu8550_55_4k_smart_1026249.jpg", :price => '499.99', :category_id => 2)
+Product.create(:name => "TV A", :description => "1080p with 2 HDMI connections. (AAA Batteries are needed)", :url => "http://iacom1-a.akamaihd.net/produtos/01/00/item/122701/4/122701411_1GG.png", :price => '499.99', :category_id => 2)
 
-Product.create(:name => "Camera A", :description => "Capture life's great moments", :url => "http://pisces.bbystatic.com/image2/BestBuy_US/images/products/8154/8154046_sd.jpg;canvasHeight=500;canvasWidth=500", :price => '399.99', :category_id => 3)
+Product.create(:name => "Camera A", :description => "Capture life's great moments", :url => "https://www.ormsdirect.co.za/media/catalog/product/cache/1/image/1280x/040ec09b1e35df139433887a97daa66f/f/u/fuji-x-t-18-55mm-4.png", :price => '399.99', :category_id => 3)
 
-Product.create(:name => "Headphone B", :description => "Hear music the way it was intended to be heard", :url => "http://pisces.bbystatic.com/image2/BestBuy_US/images/products/8355/8355301_sa.jpg;canvasHeight=500;canvasWidth=500", :price => '299.99', :category_id => 4)
+Product.create(:name => "Headphone B", :description => "Hear music the way it was intended to be heard", :url => "http://images.bestbuy.com/BestBuy_US/en_US/images/abn/2015/global/buyingguides/RE_headphones/work2.png", :price => '299.99', :category_id => 4)
 
-Product.create(:name => "Cellphone B", :description => "Active noise cancelling", :url => "http://techmobile.ma/image/cache/catalog/produits/samsung%20s6/122292267_16GG-500x500.jpg", :price => '699.99', :category_id => 1)
+Product.create(:name => "Cellphone B", :description => "Active noise cancelling", :url => "https://regalbuyer.com/media/catalog/product/cache/1/image/500x500/9df78eab33525d08d6e5fb8d27136e95/g/a/galaxy-s6-edge-white1.png", :price => '699.99', :category_id => 1)
 
-Product.create(:name => "Laptop C", :description => "Perfect for those on a budget", :url => "http://www.nancyselectronics.com/wp-content/uploads/2015/11/HP-14-Laptop-4GB-16GB-14-q039wm-0.jpg", :price => '149.99', :category_id => 5)
+Product.create(:name => "Laptop C", :description => "Perfect for those on a budget", :url => "http://www.elnstore.com/image/cache/data/Laptop-Netbook/Acer/Acer2015/August/E5-473-32GU-Acer-Tropical-Yellow-500x500.png", :price => '149.99', :category_id => 5)
 
-Product.create(:name => "TV D", :description => "Features black and white motion pictures!", :url => "http://ecx.images-amazon.com/images/I/41PGVCSBE3L._SS500_.jpg", :price => '19.99', :category_id => 2)
+Product.create(:name => "TV D", :description => "Features black and white motion pictures!", :url => "https://pbs.twimg.com/profile_images/1737726843/small-old-tv.png", :price => '19.99', :category_id => 2)
 
-Product.create(:name => "TV B", :description => "Features two HDMI ports and easy installation", :url => "http://livrenegocio.com/wp-content/uploads/2015/09/122449121_1GG.jpg", :price => '399.99', :category_id => 2)
+Product.create(:name => "TV B", :description => "Features two HDMI ports and easy installation", :url => "http://sweeps.thedailyjackpot.com/images/prizes/tv3.fw.png", :price => '399.99', :category_id => 2)
 
-Product.create(:name => "Camera B", :description => "Sleek and slim design", :url => "http://ecx.images-amazon.com/images/I/519z3AjKzHL.jpg", :price => '199.99', :category_id => 3)
+Product.create(:name => "Camera B", :description => "Sleek and slim design", :url => "http://fix4ulondon.com/133-home_default/digital-camera-.jpg", :price => '199.99', :category_id => 3)
 
-Product.create(:name => "Laptop A", :description => "Touchscreen laptop that easily converts to a Tablet", :url => "http://pisces.bbystatic.com/image2/BestBuy_US/images/products/4203/4203501_sd.jpg;canvasHeight=500;canvasWidth=500", :price => '499.99', :category_id => 5)
+Product.create(:name => "Laptop A", :description => "Touchscreen laptop that easily converts to a Tablet", :url => "http://www.computerduniya.com/image/cache/data/Acer%20Laptop/S3-391-photo-gallery-04-500x500.png", :price => '499.99', :category_id => 5)
 
-Product.create(:name => "Headphone A", :description => "Hear music the way it was intended to be heard", :url => "http://www.bestbuy.ca/multimedia/products/500x500/102/10293/10293068.jpg", :price => '299.99', :category_id => 4)
+Product.create(:name => "Headphone A", :description => "Hear music the way it was intended to be heard", :url => "http://bullet-tech.com/images/products/151101_bbd_st2w_wht_02.png", :price => '299.99', :category_id => 4)
 
-Product.create(:name => "Cellphone D", :description => "Relive the past with the one that started it all", :url => "http://ecx.images-amazon.com/images/I/41PoHPkJQ%2BL.jpg", :price => '49.99', :category_id => 1)
+Product.create(:name => "Cellphone D", :description => "Semi-portable phone from the past", :url => "https://www.ukhomeandpersonalloans.co.uk/images/phone.png", :price => '49.99', :category_id => 1)
 
-Product.create(:name => "TV C", :description => "Perfect for family game night", :url => "http://pisces.bbystatic.com/image2/BestBuy_US/images/products/2698/2698036_sd.jpg;canvasHeight=500;canvasWidth=500", :price => '799.99', :category_id => 2)
+Product.create(:name => "TV C", :description => "Perfect for family game night", :url => "https://www.condor.dz/imgs/familles/158_98b41a23dba8eb114ed7d6dd1a41d3a8.gif", :price => '799.99', :category_id => 2)
 
-Product.create(:name => "Laptop B", :description => "Must have for mobile gamers", :url => "http://ll-us-i5.wal.co/dfw/4ff9c6c9-498e/k2-_78cae0da-876a-4a94-afe4-80737f81a2d5.v1.jpg-a127f37cac2df69efe74760b3d39c774ec2e8751-optim-500x500.jpg", :price => '999.99', :category_id => 5)
+Product.create(:name => "Laptop B", :description => "Must have for mobile gamers", :url => "http://laptoppriceinbd.com/image/cache/catalog/LAPTOP/lenovo/Lenovo%20IdeaPad%20100%20%205th%20Gen%20i3%20Laptop-500x500.png", :price => '999.99', :category_id => 5)
 
-Product.create(:name => "Camera C", :description => "Perfect capturing active moments", :url => "http://cdn.toptenreviews.com/rev/scrn/large/63082-gopro2.jpg", :price => '299.99', :category_id => 3)
+Product.create(:name => "Camera C", :description => "Perfect capturing active moments", :url => "http://www.pqigroup.com/files/20120702164718011.png", :price => '299.99', :category_id => 3)
 
-Product.create(:name => "Cellphone C", :description => "Back to basics", :url => "http://www.shopkami.com/images/stories/Cellphone%20FP1217/Cellphone%20FP1217-2.jpg", :price => '29.99', :category_id => 1)
+Product.create(:name => "Cellphone C", :description => "Back to basics", :url => "http://www.celllocker.com/images/sanyo%20mirro.gif", :price => '29.99', :category_id => 1)
 
 

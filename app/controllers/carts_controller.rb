@@ -1,4 +1,6 @@
 class CartsController < ApplicationController
+	before_action :require_login
+	
 	def index
 		@products = Cart.where(:user_id => session[:user_id]).where(:order_id => nil)
 		@cart_total = 0

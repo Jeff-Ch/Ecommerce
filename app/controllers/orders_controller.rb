@@ -1,4 +1,6 @@
 class OrdersController < ApplicationController
+  before_action :require_login
+  
   def new
   	Order.create(:shipspeed_id => 1, :orderstatus_id => 1)
   	@products = Cart.where(:user_id => session[:user_id]).where(:order_id => nil)
