@@ -15,11 +15,11 @@
 					<input type = 'hidden' name ='id' value='<%= product.id %>'>
 					<input type ='hidden' name ='origin' value='products'>
 					<input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
-					<button id = 'add' class="btn waves-effect waves-light add_to" type="submit" name="action"><i class="material-icons">add_shopping_cart</i></button>
+					<button id = 'add' class="btn waves-effect waves-light add_to green accent-3" type="submit" name="action"><i class="material-icons">add_shopping_cart</i></button>
 				</div>
 			</form>
 		</div>
-		<a class="btn small-btn waves-effect waves-light more_info" href='/products/<%= product.id %>/'>More Info</a>
+		<a class="btn small-btn waves-effect waves-light more_info light-blue accent-3" href='/products/<%= product.id %>/'>More Info</a>
 	</div>
 </div>
 <% end %>

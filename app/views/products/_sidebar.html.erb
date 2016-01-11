@@ -2,7 +2,7 @@
 
 <% @categories.each do |category| %>
 <div class='collection-item'>
-<%= link_to category.name, fetch_products_path(:category_id => category.id), :remote => true, :class => "waves-effect waves-light btn blue lighten-3 more_info" %>
+<%= link_to category.name, fetch_products_path(:category_id => category.id), :remote => true, :class => "waves-effect waves-light btn red accent-2 more_info" %>
 </div>
 <% end %>
-<a href= "/products" class="waves-effect waves-light btn black-text blue-grey lighten-4 more_info">All Products</a>
+<a href= "/products" class="waves-effect waves-light btn black-text grey lighten-1 more_info">All Products</a>

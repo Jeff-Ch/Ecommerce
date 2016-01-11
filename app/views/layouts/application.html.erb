@@ -77,16 +77,26 @@
   .style3{
     margin-left: 25px;
   }
+  div.col.s2.sidebar{
+    padding-left: 2%;
+  }
+  nav ul, .title{
+    margin-left:20px;
+  }
+  i.right{
+    margin-right:20px;
+  }
   </style>
 </head>
-<body>
+<body class="grey lighten-4">
   <% if session[:logged_in] %>
   <nav>
-    <div class="nav-wrapper">
-      <%= link_to '<i class="material-icons right">shopping_cart</i>'.html_safe, cart_path %>
+    <div class="nav-wrapper black-text white">
+      <a href="/home" class="brand-logo center black-text">Tech World</a>
+      <%= link_to '<i class="material-icons right grey-text pull-s1">shopping_cart</i>'.html_safe, cart_path %>
       <ul id="nav-mobile" class="left hide-on-med-and-down">
-        <li><%= link_to "Home", home_path %></li>
-        <li><%= link_to "Products", products_path %></li>
+        <li><%= link_to "Home", home_path, :class => "grey-text" %></li>
+        <li><%= link_to "Products", products_path, :class => "grey-text" %></li>
         <li></li>
       </ul>
     </div>

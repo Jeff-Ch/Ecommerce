@@ -1,11 +1,11 @@
-<h4>Browse our selections</h4>
+<h5 class='title'>Our Catalog</h5>
 
 
 <div class = 'row'>
-	<div class = 'col s12 m6 l3'>
+	<div class = 'col s2 sidebar'>
 		<%= render 'sidebar' %>
 	</div>
-	<div class ='col s12 m6 l9'>
+	<div class ='col s10'>
 		<%= render partial: 'products_grid', locals: { products: @products} %>
 	</div>
 </div>
