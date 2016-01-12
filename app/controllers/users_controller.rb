@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :require_login, except: [:create]
 
   def create
-      @user = User.new(user_params)
+    @user = User.new(user_params)
     if @user.valid?
       @user.save
       session[:user_id] = User.last.id

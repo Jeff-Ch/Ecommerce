@@ -1,8 +1,13 @@
-<h4>Thank you for creating a new account!</h4>
+<h5 class='center'>Thank you for creating a new account!</h5>
 
-<h4>Enter your desired username</h4>
-<form action='/users/create_username' method='post'>
-	<input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
-	<input type='text' name='username'>
-	<input type='submit' value='create'>
-</form>
+<h5 class='center'>Enter your desired username</h5>
+<div class='row'>
+	<div class='col s4 offset-s4 center'>
+		<form action='/users/create_username' method='post'>
+			<input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
+			<input type='text' class='center' name='username'>
+			<button class="btn waves-effect waves-light" type="submit" name="action">Create
+  			</button>
+		</form>
+	</div>
+</div>

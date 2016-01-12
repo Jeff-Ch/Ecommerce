@@ -14,7 +14,7 @@ OrderStatus.create(:status => "Processing")
 OrderStatus.create(:status => "Shipped")
 OrderStatus.create(:status => "Cancelled")
 
-User.create(:first_name => "Jeff", :last_name => "C", :email => "j@1.com", :password => "12345678", :password_confirmation => "12345678")
+User.create(:first_name => "John", :last_name => "Doe", :email => "test@gmail.com", :password => "12345678", :password_confirmation => "12345678")
 
 Category.create(:name => "Phones")
 Category.create(:name => "Televisions")

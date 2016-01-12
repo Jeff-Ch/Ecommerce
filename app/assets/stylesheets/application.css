@@ -87,4 +87,10 @@
   i.right{
     margin-right:20px;
   }
+  .demo{
+    background-color: #ff5252;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
   </style>
