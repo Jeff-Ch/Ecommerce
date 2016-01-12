@@ -1,4 +1,4 @@
-<h5 class='center'>Welcome back, <%= @user.username %></h5>
+<h5 class='center'>Welcome back, <%= @user.username %>!</h5>
 
 <p class='style3'>Customers Recently Ordered: </p>
 <div class='row'>
@@ -7,7 +7,7 @@
 	<div class="col s6 m3 l2">
 		<div class="card center" id='<%= @recent_items[i].id %>'>
 			<div class = 'img'>
-				<img src="<%= @recent_items[i].url %>" height=60% width=60% alt = "<%= @recent_items[i].name %>">
+				<%= image_tag @recent_items[i].url, size: "100x100" %>
 			</div>
 			<p><%= @recent_items[i].name %></p>
 			<p class='links'>$ <%= @recent_items[i].price %></p>

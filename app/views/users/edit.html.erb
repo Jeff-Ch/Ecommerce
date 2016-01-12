@@ -1,0 +1,16 @@
+<h5 class='center'>Edit Your Profile</h5>
+
+<div class='row'>
+	<div class ='col s4 push-s4 center'>
+		<form action="/users/update" method = 'post'>
+			<input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
+			<input placeholder= "<%= @user.first_name %>" type='text' name='user[first_name]' pattern="[A-Za-z]{2,}">
+			<input placeholder= "<%= @user.last_name %>" type='text' name='user[last_name]' pattern="[A-Za-z]{2,}">
+			<input placeholder= "<%= @user.email %>" type= 'email' name='user[email]'>
+			<p>*Password should be at least 8 characters</p>
+			<input placeholder= "Password" type='password' name='user[password]' required minlength='8'>
+			<input placeholder= "Username" type='text' name='user[username]'>
+			<button class="btn waves-effect waves-light" type="submit" name="action">Update</button>
+		</form>
+	</div>
+</div>

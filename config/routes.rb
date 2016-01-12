@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   post '/carts/purchase' => 'carts#purchase'
   post '/orders/new' => 'orders#new'
   get "/orders/confirmation" => 'orders#confirmation'
+  get '/users/edit' => 'users#edit'
+  post '/users/update' => 'users#update'
   # get '/products/:id' => 'products#show'
   
   resources :users

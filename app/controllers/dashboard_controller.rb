@@ -6,7 +6,9 @@ class DashboardController < ApplicationController
   	@recent = Cart.order('order_id DESC')
   	@recent_items = []
   	@recent.each do |cart_item|
-  		@recent_items.push(Product.find(cart_item.product_id))
+  		if cart_item.order_id != nil
+  			@recent_items.push(Product.find(cart_item.product_id))
+  		end
   	end
   	@recent_items.uniq!
   end

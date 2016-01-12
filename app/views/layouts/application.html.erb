@@ -20,6 +20,7 @@
       <a href="/home" class="brand-logo black-text center"><i class='material-icons brand-logo center grey-text'>store</i></a>
       <%= link_to "Log Out", sessions_logout_path, :class => "right grey-text", :style => "margin-right: 20px; margin-left:15px" %>
       <%= link_to '<i class="material-icons right grey-text">shopping_cart</i>'.html_safe, cart_path %>
+      <%= link_to '<i class="material-icons right grey-text">settings</i>'.html_safe, users_edit_path %>
       <ul id="nav-mobile" class="left hide-on-med-and-down">
         <li><%= link_to "Home", home_path, :class => "grey-text" %></li>
         <li><%= link_to "Products", products_path, :class => "grey-text" %></li>
