@@ -2,45 +2,8 @@ Rails.application.routes.draw do
 
   root 'sessions#index'
   
-  get 'orders/new'
-
-  get 'orders/update'
-
-  get 'orders/cancel'
-
-  get 'carts/index'
-
-  get 'carts/update'
-
-  get 'carts/delete'
-
-  get 'dashboard/index'
-
-  get 'users/index'
-
-  get 'users/show'
-
-  get 'users/new'
-
-  get 'users/edit'
-
-  get 'users/create'
-
-  get 'users/update'
-
-  get 'users/destroy'
-
-  get 'products/index'
-
-  get 'products/show'
-
-  get 'sessions/index'
-
-  get 'sessions/login'
-
-  get 'sessions/logout'
-
   post 'sessions/login' => 'sessions#login'
+  get 'sessions/logout' => 'sessions#logout'
 
   get 'users/new' => 'users#new'
 
@@ -53,6 +16,7 @@ Rails.application.routes.draw do
   get 'cart' => 'carts#index'
   post '/carts/purchase' => 'carts#purchase'
   post '/orders/new' => 'orders#new'
+  get "/orders/confirmation" => 'orders#confirmation'
   # get '/products/:id' => 'products#show'
   
   resources :users

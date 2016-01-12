@@ -13,3 +13,78 @@
  *= require_tree .
  *= require_self
  */
+<style>
+  *{
+    border: 0;
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+  }
+  #error_msg{
+    display: inline-block;
+    margin-left: 30px;
+  }
+  #error_container{
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  .img{
+    padding: 20px 10px 20px 10px;
+  }
+  .links{
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  .product_info{
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  .dropdown-content{
+    text-indent: 25px;
+  }
+  .select-wrapper input.select-dropdown{
+    text-indent: 25px;
+  }
+  #update{
+    padding-top: 30px;
+  }
+  #action{
+    width: 250px;
+  }
+  #quantity{
+    text-align: center;
+  }
+  #add, .product_card{
+    margin-top: 10px;
+  }
+  .product_card{
+    margin-bottom: 15px;
+  }
+  .add_to{
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .more_info{
+    margin-bottom: 20px;
+    font-size: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .style{
+    margin-top: 25px;
+  }
+  .style2{
+    width: 70px;
+  }
+  .style3{
+    margin-left: 25px;
+  }
+  div.col.s2.sidebar{
+    padding-left: 2%;
+  }
+  nav ul, .title{
+    margin-left:20px;
+  }
+  i.right{
+    margin-right:20px;
+  }
+  </style>

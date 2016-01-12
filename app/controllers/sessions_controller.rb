@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
       if @user and @user.authenticate(params[:user][:password])
         session[:user_id] = @user.id
         if Username.where(:user_id => session[:user_id]).first
+          session[:username] = true
           redirect_to "/dashboard"
         else
           redirect_to "/users/new"
@@ -25,4 +26,5 @@ class SessionsController < ApplicationController
     session.clear
     redirect_to "/"
   end
+  
 end

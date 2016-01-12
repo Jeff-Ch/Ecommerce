@@ -23,13 +23,10 @@ class CartsController < ApplicationController
 			@product_id = Cart.last.product_id
 		end
 		if params[:origin] == "info"
-			redirect_to "/carts/index"
+			redirect_to "/cart"
 		else
 			redirect_to "/products"
 		end
-	end
-
-	def delete
 	end
 
 	def remove
@@ -40,6 +37,6 @@ class CartsController < ApplicationController
 		else
 			Cart.update(@current_product.id, :quantity => @quantity)
 		end
-		redirect_to "/carts/index"
+		redirect_to "/cart"
 	end
 end

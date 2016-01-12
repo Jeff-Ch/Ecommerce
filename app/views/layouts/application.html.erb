@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>MiniStore</title>
+  <title>Tech World</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -11,90 +11,15 @@
 
   <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-  <style>
-  *{
-    border: 0;
-    margin: 0;
-    font-family: 'Raleway', sans-serif;
-  }
-  #error_msg{
-    display: inline-block;
-    margin-left: 30px;
-  }
-  #error_container{
-    margin-top: 40px;
-    margin-bottom: 40px;
-  }
-  .img{
-    padding: 20px 10px 20px 10px;
-  }
-  .links{
-    padding-top: 15px;
-    padding-bottom: 15px;
-  }
-  .product_info{
-    margin-top: 20px;
-    margin-bottom: 30px;
-  }
-  .dropdown-content{
-    text-indent: 25px;
-  }
-  .select-wrapper input.select-dropdown{
-    text-indent: 25px;
-  }
-  #update{
-    padding-top: 30px;
-  }
-  #action{
-    width: 250px;
-  }
-  #quantity{
-    text-align: center;
-  }
-  #add, .product_card{
-    margin-top: 10px;
-  }
-  .product_card{
-    margin-bottom: 15px;
-  }
-  .add_to{
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-  .more_info{
-    margin-bottom: 20px;
-    font-size: 10px;
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-  .style{
-    margin-top: 25px;
-  }
-  .style2{
-    width: 70px;
-  }
-  .style3{
-    margin-left: 25px;
-  }
-  div.col.s2.sidebar{
-    padding-left: 2%;
-  }
-  nav ul, .title{
-    margin-left:20px;
-  }
-  i.right{
-    margin-right:20px;
-  }
-  </style>
 </head>
 <body class="grey lighten-4">
 
   <% if session[:username] %>
   <nav>
     <div class="nav-wrapper black-text white">
-      <a href="/home" class="brand-logo center black-text">Tech World</a>
-      <%= link_to '<i class="material-icons right grey-text pull-s1">shopping_cart</i>'.html_safe, cart_path %>
+      <a href="/home" class="brand-logo black-text center"><i class='material-icons brand-logo center grey-text'>store</i></a>
+      <%= link_to "Log Out", sessions_logout_path, :class => "right grey-text", :style => "margin-right: 20px; margin-left:15px" %>
+      <%= link_to '<i class="material-icons right grey-text">shopping_cart</i>'.html_safe, cart_path %>
       <ul id="nav-mobile" class="left hide-on-med-and-down">
         <li><%= link_to "Home", home_path, :class => "grey-text" %></li>
         <li><%= link_to "Products", products_path, :class => "grey-text" %></li>
@@ -104,18 +29,18 @@
   </nav>
   <% end %>
 
-    <div id='error_container'>
+  <div id='error_container'>
     <% if flash[:error] %>
-      <% flash[:error].each do |e| %>
-        <div id = 'error_msg' class = 'card-panel red lighten-3'>
-          <span class='white-text'><%= e %></span>
-        </div>
-      <% end %>
+    <% flash[:error].each do |e| %>
+    <div id = 'error_msg' class = 'card-panel red lighten-3'>
+      <span class='white-text'><%= e %></span>
+    </div>
     <% end %>
- </div>
+    <% end %>
+  </div>
 
 
- <%= yield %>
+  <%= yield %>
 
 </body>
 </html>
