@@ -17,6 +17,40 @@
 	<% end %>
 </div>
 
+<p class='style3'>Your Past Orders</p>
+<div class='row'>
+	<table class='centered highlight col s8 push-s2'>
+		<thead>
+			<tr>
+				<th>Order Number</th>
+				<th>Number of Items</th>
+				<th>Total</th>
+				<th>Order Status</th>
+				<th></th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<% @list_of_orders.each do |order| %>
+			<tr>
+				<td><a href='/orders/<%= order.id %>'># <%= order.id %></a></td>
+				<td><%= order.quantity %></td>
+				<td>$ <%= order.total %></td>
+				<td><%= order.status %></td>
+				<% if order.status != "Cancelled" %>
+				<td>
+					<form action='/orders/cancel/<%= order.id %>' method='post'>
+						<input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
+						<button class="btn waves-effect waves-light red accent-2" type="submit" name="action">Cancel</button>
+					</form>
+				</td>
+				<% end %>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
+
 <script>
 $(document).ready(function() {
 	$('.card').click(function(){

@@ -1,32 +1,39 @@
 Rails.application.routes.draw do
 
   root 'sessions#index'
-  
-  post 'sessions/login' => 'sessions#login'
-  get 'sessions/logout' => 'sessions#logout'
 
-  get 'users/new' => 'users#new'
-
-  post '/users/create_username' => 'users#create_username'
-  post '/carts/update' => 'carts#update'
-  post '/carts/remove' => 'carts#remove'
-
-  get 'home' => 'dashboard#index'
-  get 'products' => 'products#index'
-  get 'cart' => 'carts#index'
-  post '/carts/purchase' => 'carts#purchase'
-  post '/orders/new' => 'orders#new'
-  get "/orders/confirmation" => 'orders#confirmation'
-  get '/users/edit' => 'users#edit'
-  post '/users/update' => 'users#update'
-  # get '/products/:id' => 'products#show'
-  
   resources :users
   resources :sessions
   resources :products
   resources :dashboard
 
+  get 'home' => 'dashboard#index'
+  get 'products' => 'products#index'
+  get 'cart' => 'carts#index'
+
   get '/fetch_products' => 'products#from_category', as: 'fetch_products'
+
+  post 'sessions/login' => 'sessions#login'
+  get 'sessions/logout' => 'sessions#logout'
+
+  get 'users/new' => 'users#new'
+  post '/users/create_username' => 'users#create_username'
+  get '/users/edit' => 'users#edit'
+  post '/users/update' => 'users#update'
+
+  post '/carts/update' => 'carts#update'
+  post '/carts/remove' => 'carts#remove'
+  post '/carts/purchase' => 'carts#purchase'
+
+  post '/orders/new' => 'orders#new'
+  get '/orders/confirmation' => 'orders#confirmation'
+  get '/orders/:id' => 'orders#show'
+  post '/orders/cancel/:id' => 'orders#cancel'
+
+
+
+  
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

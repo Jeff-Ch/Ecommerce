@@ -5,24 +5,22 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-ShipSpeed.create(:speed => "Standard")
-ShipSpeed.create(:speed => "Expedited")
-ShipSpeed.create(:speed => "2-Day")
-ShipSpeed.create(:speed => "Next Day")
-
-OrderStatus.create(:status => "Processing")
-OrderStatus.create(:status => "Shipped")
-OrderStatus.create(:status => "Cancelled")
 
 User.create(:first_name => "John", :last_name => "Doe", :email => "test@gmail.com", :password => "12345678", :password_confirmation => "12345678")
+User.create(:first_name => "Jane", :last_name => "Doe", :email => "test2@gmail.com", :password => "12345678", :password_confirmation => "12345678")
 
-Cart.create(:user_id => User.last.id, :product_id => 11, :quantity => 1, :order_id => 1)
-Cart.create(:user_id => User.last.id, :product_id => 3, :quantity => 1, :order_id => 1)
-Cart.create(:user_id => User.last.id, :product_id => 7, :quantity => 1, :order_id => 1)
+Cart.create(:user_id => 1, :product_id => 11, :quantity => 1, :order_id => 1)
+Cart.create(:user_id => 1, :product_id => 3, :quantity => 1, :order_id => 1)
+Cart.create(:user_id => 1, :product_id => 7, :quantity => 1, :order_id => 1)
 
-Order.create(:shipspeed_id => 1, :orderstatus_id => 1)
+Cart.create(:user_id => 2, :product_id => 2, :quantity => 1, :order_id => 1)
+Cart.create(:user_id => 2, :product_id => 8, :quantity => 1, :order_id => 1)
+Cart.create(:user_id => 2, :product_id => 14, :quantity => 1, :order_id => 1)
 
-Cart.create(:user_id => User.last.id, :product_id => 1, :quantity => 1)
+Order.create(:status => "Processing", :total => 719.97, :quantity => 3)
+Order.create(:status => "Processing", :total => 1899.97, :quantity => 3)
+
+Cart.create(:user_id => 1, :product_id => 1, :quantity => 1)
 
 Category.create(:name => "Phones")
 Category.create(:name => "Televisions")

@@ -11,5 +11,12 @@ class DashboardController < ApplicationController
   		end
   	end
   	@recent_items.uniq!
+    @all_items = Cart.where(:user_id => session[:user_id]).where.not(:order_id => nil)
+    @list_of_orders = []
+    @all_items.each do |item|
+      @list_of_orders.push(Order.find(item.order_id))
+    end
+    @list_of_orders.uniq!
   end
+
 end

@@ -32,21 +32,13 @@ ActiveRecord::Schema.define(version: 20160110030116) do
     t.datetime "updated_at"
   end
 
-  create_table "order_statuses", force: true do |t|
-    t.string   "status"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "orders", force: true do |t|
-    t.integer  "shipspeed_id"
-    t.integer  "orderstatus_id"
+    t.string   "status"
+    t.decimal  "total",      precision: 5, scale: 2
+    t.integer  "quantity"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "orders", ["orderstatus_id"], name: "index_orders_on_orderstatus_id"
-  add_index "orders", ["shipspeed_id"], name: "index_orders_on_shipspeed_id"
 
   create_table "products", force: true do |t|
     t.string   "name"
@@ -59,12 +51,6 @@ ActiveRecord::Schema.define(version: 20160110030116) do
   end
 
   add_index "products", ["category_id"], name: "index_products_on_category_id"
-
-  create_table "ship_speeds", force: true do |t|
-    t.string   "speed"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "usernames", force: true do |t|
     t.string   "username"

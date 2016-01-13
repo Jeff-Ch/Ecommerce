@@ -1,6 +1,6 @@
-<h5 class='style3'>Order Confirmation: #<%= @order.order_id %></h5>
+<h5 class='style3'>Order Confirmation: #<%= @order.id %></h5>
 
-<p class='style3'>You have purchased <span style='font-weight:bold'><%= @cart_quantity %></span> item(s) totaling <span style='font-weight:bold'>$ <%= @cart_total %></span>. Thank you for shopping at Tech World!</p>
+<p class='style3'>You have purchased <span style='font-weight:bold'><%= @order.quantity %></span> item(s) totaling <span style='font-weight:bold'>$ <%= @order.total %></span>. Thank you for shopping at Tech World!</p>
 
 <h5 class = 'center'>Summary of Purchased Items:</h5>
 
