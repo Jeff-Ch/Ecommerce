@@ -2,15 +2,6 @@ Rails.application.routes.draw do
 
   root 'sessions#index'
 
-  resources :users
-  resources :sessions
-  resources :products
-  resources :dashboard
-
-  get 'home' => 'dashboard#index'
-  get 'products' => 'products#index'
-  get 'cart' => 'carts#index'
-
   get '/fetch_products' => 'products#from_category', as: 'fetch_products'
 
   post 'sessions/login' => 'sessions#login'
@@ -30,6 +21,14 @@ Rails.application.routes.draw do
   get '/orders/:id' => 'orders#show'
   post '/orders/cancel/:id' => 'orders#cancel'
 
+  resources :users
+  resources :sessions
+  resources :products
+  resources :dashboard
+
+  get 'home' => 'dashboard#index'
+  get 'products' => 'products#index'
+  get 'cart' => 'carts#index'
 
 
   

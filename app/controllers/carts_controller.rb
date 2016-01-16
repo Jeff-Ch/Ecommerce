@@ -30,7 +30,7 @@ class CartsController < ApplicationController
 	end
 
 	def remove
-		@current_product = Cart.where(:user_id => session[:user_id]).where(:product_id => params[:id]).first
+		@current_product = Cart.where(:user_id => session[:user_id]).where(:product_id => params[:id]).where(:order_id => nil).first
 		@quantity = @current_product.quantity - params[:quantity].to_i
 		if @quantity == 0
 			Cart.destroy(@current_product.id)

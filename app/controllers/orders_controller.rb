@@ -9,7 +9,7 @@ class OrdersController < ApplicationController
       @cart_total += cart_item.quantity * cart_item.product.price
       @cart_quantity += cart_item.quantity
     end
-  	Order.create(:status => "Pending", :total => @cart_total, :quantity => @cart_quantity)
+  	Order.create(:status => "Processing", :total => @cart_total, :quantity => @cart_quantity)
   	@products.each do |cart_item|
   		Cart.update(cart_item.id, :order_id => Order.last.id)
   	end
