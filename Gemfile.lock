@@ -54,6 +54,9 @@ GEM
     mime-types (2.99)
     minitest (5.8.3)
     multi_json (1.11.2)
+    passenger (5.0.23)
+      rack
+      rake (>= 0.8.1)
     rack (1.5.5)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -116,6 +119,7 @@ DEPENDENCIES
   hirb
   jbuilder (~> 2.0)
   jquery-rails
+  passenger
   rails (= 4.1.8)
   rename
   sass-rails (~> 4.0.3)
